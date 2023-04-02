@@ -25,6 +25,7 @@ resource "aws_vpc" "default" {
     }
 }
 
+#newly added 
 
 data "aws_vpc" "host-vpc" {
   id = var.vpcexst_id
