@@ -25,6 +25,22 @@ resource "aws_vpc" "default" {
     }
 }
 
+
+data "aws_vpc" "host-vpc" {
+  id = var.vpcexst_id
+}
+
+resource "aws_subnet" "hostvpc_subnet1-public" {
+    vpc_id = "${data.aws_vpc.host-vpc.id}"
+    cidr_block = "${var.public_hostvpc_subnet4_cidr}"
+    availability_zone = "us-east-1a"
+
+    tags = {
+        Name = "${var.public_hostvpc_subnet4_name}"
+    }
+}
+
+
 resource "aws_internet_gateway" "default" {
     vpc_id = "${aws_vpc.default.id}"
 	tags = {

@@ -10,10 +10,13 @@ variable "amis" {
 		us-west-2 = "ami-f2d3638a" # ubuntu 14.04 LTS
     }
 }
+variable "vpcexst_id" {}
 variable "vpc_cidr" {}
 variable "vpc_name" {}
 variable "IGW_name" {}
 variable "key_name" {}
+variable "public_hostvpc_subnet4_cidr" {}
+variable "public_hostvpc_subnet4_name" {}
 variable "public_subnet1_cidr" {}
 variable "public_subnet2_cidr" {}
 variable "public_subnet3_cidr" {}

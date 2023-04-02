@@ -4,6 +4,59 @@ output "vpc_name" {
   value = ["${aws_vpc.default.tags.Name}"]
 }
 
+output "host_vpc_name" {
+
+  description = "name of host vpc"
+  value = ["${data.aws_vpc.host-vpc.tags.Name}"]
+  
+}
+
+output "host_vpc_cidr" {
+
+  description = "name of host vpc"
+  value = ["${data.aws_vpc.host-vpc.cidr_block}"]
+  
+}
+
+output "host_vpc_Routetable" {
+
+  description = "name of host vpc"
+  value = ["${data.aws_vpc.host-vpc.main_route_table_id}"]
+  
+}
+
+output "host_vpc_subnet4" {
+
+  description = "name of host vpc"
+  value = ["${aws_subnet.hostvpc_subnet1-public.tags.Name}"]
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # output "vpc_id" {
 #   description = "list of IDs of VPC"
 #   value = ["${aws_vpc.default.id}"]
